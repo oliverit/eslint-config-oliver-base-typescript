@@ -12,6 +12,7 @@ module.exports = {
 	],
 	rules: {
 		'@typescript-eslint/no-explicit-any': 'off',
+		'@typescript-eslint/camelcase': ['error', { properties: 'never', ignoreDestructuring: false }],
 		'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
 		'class-methods-use-this': 'off',
 		'comma-dangle': ['error', 'never'],
