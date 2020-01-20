@@ -11,8 +11,18 @@ module.exports = {
 		'@typescript-eslint'
 	],
 	rules: {
-		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/camelcase': ['error', { properties: 'never', ignoreDestructuring: false }],
+		'@typescript-eslint/member-delimiter-style': ['error', {
+			multiline: {
+				delimiter: 'comma',
+				requireLast: false
+			},
+			singleline: {
+				delimiter: 'comma',
+				requireLast: false
+			}
+		}],
+		'@typescript-eslint/no-explicit-any': 'off',
 		'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
 		'class-methods-use-this': 'off',
 		'comma-dangle': ['error', 'never'],
