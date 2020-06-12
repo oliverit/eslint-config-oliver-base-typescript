@@ -30,14 +30,32 @@ module.exports = {
 			selector: 'variable', // Allow uppercased variable names
 			format: ['camelCase', 'UPPER_CASE'],
 			leadingUnderscore: 'forbid',
+			trailingUnderscore: 'forbid',
+			filter: {
+				regex: '^(_id)$', // Exclude variables with name '_id' (used by MongoDB)
+				match: false
+			}
+		}, {
+			selector: 'enumMember', // Enum members must be PascalCase instead of camelCase
+			format: ['PascalCase'],
+			leadingUnderscore: 'forbid',
 			trailingUnderscore: 'forbid'
 		}, {
 			selector: 'typeLike', // Types must be PascalCase instead of camelCase
 			format: ['PascalCase'],
 			leadingUnderscore: 'forbid',
 			trailingUnderscore: 'forbid'
+		}, {
+			selector: 'property', // Exclude properties which require quotes for example 'Content-Type'
+			format: ['camelCase'],
+			filter: {
+				regex: '[- ]', // Property name contains a '-' and/or a space
+				match: false
+			}
 		}],
 		'@typescript-eslint/no-explicit-any': 'off',
+		'@typescript-eslint/no-unsafe-assignment': 'off',
+		'@typescript-eslint/no-unsafe-member-access': 'off',
 		'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
 		'class-methods-use-this': 'off',
 		'comma-dangle': ['error', 'never'],
