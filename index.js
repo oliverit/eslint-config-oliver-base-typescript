@@ -22,34 +22,45 @@ module.exports = {
 			}
 		}],
 		'@typescript-eslint/naming-convention': ['error', {
-			selector: 'default', // Matches all selectors
+			selector: 'default',
 			format: ['camelCase'],
 			leadingUnderscore: 'forbid',
-			trailingUnderscore: 'forbid'
+			trailingUnderscore: 'forbid',
+			filter: {
+				// Exclude '_id' (used by MongoDB)
+				regex: '^(_id)$',
+				match: false
+			}
 		}, {
-			selector: 'variable', // Allow uppercased variable names
+			// Allow uppercased variable names
+			selector: 'variable',
 			format: ['camelCase', 'UPPER_CASE'],
 			leadingUnderscore: 'forbid',
 			trailingUnderscore: 'forbid',
 			filter: {
-				regex: '^(_id)$', // Exclude variables with name '_id' (used by MongoDB)
+				// Exclude '_id' (used by MongoDB)
+				regex: '^(_id)$',
 				match: false
 			}
 		}, {
-			selector: 'enumMember', // Enum members must be PascalCase instead of camelCase
+			// Enum members must be PascalCase instead of camelCase
+			selector: 'enumMember',
 			format: ['PascalCase'],
 			leadingUnderscore: 'forbid',
 			trailingUnderscore: 'forbid'
 		}, {
-			selector: 'typeLike', // Types must be PascalCase instead of camelCase
+			// Types must be PascalCase instead of camelCase
+			selector: 'typeLike',
 			format: ['PascalCase'],
 			leadingUnderscore: 'forbid',
 			trailingUnderscore: 'forbid'
 		}, {
-			selector: 'property', // Exclude properties which require quotes for example 'Content-Type'
+			selector: 'property',
 			format: ['camelCase'],
 			filter: {
-				regex: '[- ]', // Property name contains a '-' and/or a space
+				// Exclude names that require quotes because they contain a '-' and/or a space, for example 'Content-Type'
+				// Exclude '_id' (used by MongoDB)
+				regex: '[- ]|^(_id)$',
 				match: false
 			}
 		}],
