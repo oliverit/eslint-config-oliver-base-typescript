@@ -11,7 +11,6 @@ module.exports = {
 		'@typescript-eslint'
 	],
 	rules: {
-		'@typescript-eslint/camelcase': ['error', { properties: 'never', ignoreDestructuring: false }],
 		'@typescript-eslint/member-delimiter-style': ['error', {
 			multiline: {
 				delimiter: 'comma',
@@ -21,6 +20,22 @@ module.exports = {
 				delimiter: 'comma',
 				requireLast: false
 			}
+		}],
+		'@typescript-eslint/naming-convention': ['error', {
+			selector: 'default', // Matches all selectors
+			format: ['camelCase'],
+			leadingUnderscore: 'forbid',
+			trailingUnderscore: 'forbid'
+		}, {
+			selector: 'variable', // Allow uppercased variable names
+			format: ['camelCase', 'UPPER_CASE'],
+			leadingUnderscore: 'forbid',
+			trailingUnderscore: 'forbid'
+		}, {
+			selector: 'typeLike', // Types must be PascalCase instead of camelCase
+			format: ['PascalCase'],
+			leadingUnderscore: 'forbid',
+			trailingUnderscore: 'forbid'
 		}],
 		'@typescript-eslint/no-explicit-any': 'off',
 		'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
@@ -34,13 +49,17 @@ module.exports = {
 			tsx: 'never'
 		}],
 		indent: ['error', 'tab', {
+			// eslint-disable-next-line @typescript-eslint/naming-convention
 			SwitchCase: 1,
+			// eslint-disable-next-line @typescript-eslint/naming-convention
 			VariableDeclarator: 1,
 			outerIIFEBody: 1,
+			// eslint-disable-next-line @typescript-eslint/naming-convention
 			FunctionDeclaration: {
 				parameters: 1,
 				body: 1
 			},
+			// eslint-disable-next-line @typescript-eslint/naming-convention
 			FunctionExpression: {
 				parameters: 1,
 				body: 1

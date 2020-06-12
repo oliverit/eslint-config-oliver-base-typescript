@@ -1,3 +1,4 @@
+/* eslint-disable */
 const eslintrc = require('.')
 
 module.exports = {
