@@ -27,8 +27,9 @@ module.exports = {
 			leadingUnderscore: 'forbid',
 			trailingUnderscore: 'forbid',
 			filter: {
+				// Exclude names that require quotes because they contain a '-' and/or a space, for example 'Content-Type'
 				// Exclude '_id' (used by MongoDB)
-				regex: '^(_id)$',
+				regex: '[- ]|^(_id)$|^(Authorization)$',
 				match: false
 			}
 		}, {
@@ -36,12 +37,7 @@ module.exports = {
 			selector: 'variable',
 			format: ['camelCase', 'UPPER_CASE'],
 			leadingUnderscore: 'forbid',
-			trailingUnderscore: 'forbid',
-			filter: {
-				// Exclude '_id' (used by MongoDB)
-				regex: '^(_id)$',
-				match: false
-			}
+			trailingUnderscore: 'forbid'
 		}, {
 			// Enum members must be PascalCase instead of camelCase
 			selector: 'enumMember',
@@ -54,19 +50,14 @@ module.exports = {
 			format: ['PascalCase'],
 			leadingUnderscore: 'forbid',
 			trailingUnderscore: 'forbid'
-		}, {
-			selector: 'property',
-			format: ['camelCase'],
-			filter: {
-				// Exclude names that require quotes because they contain a '-' and/or a space, for example 'Content-Type'
-				// Exclude '_id' (used by MongoDB)
-				regex: '[- ]|^(_id)$',
-				match: false
-			}
 		}],
 		'@typescript-eslint/no-explicit-any': 'off',
+		'@typescript-eslint/no-floating-promises': 'off',
 		'@typescript-eslint/no-unsafe-assignment': 'off',
+		'@typescript-eslint/no-unsafe-call': 'off',
 		'@typescript-eslint/no-unsafe-member-access': 'off',
+		'@typescript-eslint/no-unsafe-return': 'off',
+		'@typescript-eslint/restrict-template-expressions': 'off',
 		'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
 		'class-methods-use-this': 'off',
 		'comma-dangle': ['error', 'never'],
