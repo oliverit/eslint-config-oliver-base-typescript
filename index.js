@@ -37,7 +37,13 @@ module.exports = {
 			selector: 'variable',
 			format: ['camelCase', 'UPPER_CASE'],
 			leadingUnderscore: 'forbid',
-			trailingUnderscore: 'forbid'
+			trailingUnderscore: 'forbid',
+			filter: {
+				// Exclude names that require quotes because they contain a '-' and/or a space, for example 'Content-Type'
+				// Exclude '_id' (used by MongoDB)
+				regex: '[- ]|^(_id)$|^(Authorization)$',
+				match: false
+			}
 		}, {
 			// Enum members must be PascalCase instead of camelCase
 			selector: 'enumMember',
