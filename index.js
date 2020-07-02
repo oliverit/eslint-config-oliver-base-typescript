@@ -28,8 +28,8 @@ module.exports = {
 			trailingUnderscore: 'forbid',
 			filter: {
 				// Exclude names that require quotes because they contain a '-' and/or a space, for example 'Content-Type'
-				// Exclude '_id' (used by MongoDB)
-				regex: '[- ]|^(_id)$|^(Authorization)$',
+				// Exclude '_id' or 'xxx._id' (used by MongoDB)
+				regex: '[- ]|^(_id)$|(._id)$|^(Authorization)$',
 				match: false
 			}
 		}, {
@@ -40,8 +40,8 @@ module.exports = {
 			trailingUnderscore: 'forbid',
 			filter: {
 				// Exclude names that require quotes because they contain a '-' and/or a space, for example 'Content-Type'
-				// Exclude '_id' (used by MongoDB)
-				regex: '[- ]|^(_id)$|^(Authorization)$',
+				// Exclude '_id' or 'xxx._id' (used by MongoDB)
+				regex: '[- ]|^(_id)$|(._id)$|^(Authorization)$',
 				match: false
 			}
 		}, {
