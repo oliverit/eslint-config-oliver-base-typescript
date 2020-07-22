@@ -23,25 +23,13 @@ module.exports = {
 		}],
 		'@typescript-eslint/naming-convention': ['error', {
 			selector: 'default',
-			format: ['camelCase'],
+			format: ['camelCase', 'PascalCase', 'snake_case', 'UPPER_CASE'],
 			leadingUnderscore: 'forbid',
 			trailingUnderscore: 'forbid',
 			filter: {
 				// Exclude names that require quotes because they contain a '-' and/or a space, for example 'Content-Type'
 				// Exclude '_id' or 'xxx._id' (used by MongoDB)
-				regex: '[- ]|^(_id)$|(._id)$|^(Authorization)$',
-				match: false
-			}
-		}, {
-			// Allow uppercased variable names
-			selector: 'variable',
-			format: ['camelCase', 'UPPER_CASE'],
-			leadingUnderscore: 'forbid',
-			trailingUnderscore: 'forbid',
-			filter: {
-				// Exclude names that require quotes because they contain a '-' and/or a space, for example 'Content-Type'
-				// Exclude '_id' or 'xxx._id' (used by MongoDB)
-				regex: '[- ]|^(_id)$|(._id)$|^(Authorization)$',
+				regex: '[- ]|^(_id)$|(._id)$',
 				match: false
 			}
 		}, {
@@ -66,6 +54,7 @@ module.exports = {
 		'@typescript-eslint/no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
 		'@typescript-eslint/restrict-template-expressions': 'off',
 		'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+		camelcase: 'off',
 		'class-methods-use-this': 'off',
 		'comma-dangle': ['error', 'never'],
 		'import/extensions': ['error', 'ignorePackages', {
