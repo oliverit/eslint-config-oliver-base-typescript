@@ -47,6 +47,7 @@ module.exports = {
 		}],
 		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/no-floating-promises': 'off',
+		'@typescript-eslint/no-shadow': ['error'],
 		'@typescript-eslint/no-unsafe-assignment': 'off',
 		'@typescript-eslint/no-unsafe-call': 'off',
 		'@typescript-eslint/no-unsafe-member-access': 'off',
@@ -100,6 +101,7 @@ module.exports = {
 				message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.'
 			}
 		],
+		'no-shadow': 'off',
 		'no-tabs': 'off',
 		'no-underscore-dangle': ['error', { allow: ['_id'] }],
 		'object-curly-newline': 'off',
