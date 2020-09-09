@@ -104,6 +104,7 @@ module.exports = {
 		'no-shadow': 'off',
 		'no-tabs': 'off',
 		'no-underscore-dangle': ['error', { allow: ['_id'] }],
+		'no-use-before-define': 'off',
 		'object-curly-newline': 'off',
 		'prefer-destructuring': 'off',
 		semi: ['error', 'never']
