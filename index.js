@@ -65,6 +65,7 @@ module.exports = {
 			ts: 'never',
 			tsx: 'never'
 		}],
+		'import/prefer-default-export': 'off',
 		indent: ['error', 'tab', {
 			// eslint-disable-next-line @typescript-eslint/naming-convention
 			SwitchCase: 1,
@@ -104,6 +105,7 @@ module.exports = {
 		'no-shadow': 'off',
 		'no-tabs': 'off',
 		'no-underscore-dangle': ['error', { allow: ['_id'] }],
+		'no-unused-vars': 'off',
 		'no-use-before-define': 'off',
 		'object-curly-newline': 'off',
 		'prefer-destructuring': 'off',
