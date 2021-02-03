@@ -11,6 +11,19 @@ module.exports = {
 		'@typescript-eslint'
 	],
 	rules: {
+		'@typescript-eslint/indent': ['error', 'tab', {
+			SwitchCase: 1,
+			VariableDeclarator: 1,
+			outerIIFEBody: 1,
+			FunctionDeclaration: {
+				parameters: 1,
+				body: 1
+			},
+			FunctionExpression: {
+				parameters: 1,
+				body: 1
+			}
+		}],
 		'@typescript-eslint/member-delimiter-style': ['error', {
 			multiline: {
 				delimiter: 'comma',
@@ -66,23 +79,7 @@ module.exports = {
 			tsx: 'never'
 		}],
 		'import/prefer-default-export': 'off',
-		indent: ['error', 'tab', {
-			// eslint-disable-next-line @typescript-eslint/naming-convention
-			SwitchCase: 1,
-			// eslint-disable-next-line @typescript-eslint/naming-convention
-			VariableDeclarator: 1,
-			outerIIFEBody: 1,
-			// eslint-disable-next-line @typescript-eslint/naming-convention
-			FunctionDeclaration: {
-				parameters: 1,
-				body: 1
-			},
-			// eslint-disable-next-line @typescript-eslint/naming-convention
-			FunctionExpression: {
-				parameters: 1,
-				body: 1
-			}
-		}],
+		indent: 'off',
 		'max-len': 'off',
 		'no-await-in-loop': 'off',
 		'no-new': 'off',
