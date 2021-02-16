@@ -11,6 +11,7 @@ module.exports = {
 		'@typescript-eslint'
 	],
 	rules: {
+		'@typescript-eslint/explicit-module-boundary-types': 'off',
 		'@typescript-eslint/indent': ['error', 'tab', {
 			SwitchCase: 1,
 			VariableDeclarator: 1,
